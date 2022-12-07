@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-InstitutoApplication<instituto>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.jaimecorg.instituto.InstitutoApplication",
+            "projectName": "instituto",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
