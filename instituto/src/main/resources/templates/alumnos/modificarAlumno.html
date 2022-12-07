@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="commons/header :: header" />
+
+<body>
+    <style>
+        form {
+            width: 20em;
+            margin-left: 2em;
+            margin-top: .8em;
+        }
+
+        #divCheck,
+        #botonEnviar {
+            margin-top: .5em;
+        }
+    </style>
+    <form th:action="@{/alumnos/editAlumno}" method="post">
+        <div class="mb-6">
+            <label for="codigo" class="form-label">Codigo</label>
+            <input type="text" class="form-control" id="codigo" name="codigo" th:value="${alumno.codigo}">
+        </div>
+        <div class="mb-6">
+            <label for="nombre" class="form-label" th:text="#{tabla.nombre}">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" th:value="${alumno.nombre}">
+        </div>
+        <div class="mb-6">
+            <label for="apellidos" class="form-label" th:text="#{tabla.apellido}">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" name="apellidos" th:value="${alumno.apellidos}">
+        </div>
+        <div class="mb-6">
+            <label for="fechaNacimiento" class="form-label" th:text="#{tabla.fechaNacimiento}">Fecha Nacimiento</label>
+            <input type="fechaNacimiento" class="form-control" id="fechaNacimiento" name="fechaNacimiento" th:value="${alumno.fechaNacimiento}">
+        </div>
+        <div class="mb-6">
+            <label for="dni" class="form-label" th:text="#{tabla.dni}">DNI</label>
+            <input type="text" class="form-control" id="dni" name="dni" th:value="${alumno.dni}" readonly>
+        </div>
+        <div class="mb-6">
+            <label for="email" class="form-label" th:text="#{tabla.email}">Email</label>
+            <input type="text" class="form-control" id="email" name="email" th:value="${alumno.email}">
+        </div>
+        <div class="mb-6" id="divCheck">
+            <input type="checkbox" id="nuevo" name="nuevo">
+            <label for="nuevo" th:checked="${alumno.nuevo}" th:text="#{tabla.nuevo2}">¿Es alumno nuevo?</label>
+        </div>
+        <div>
+            <input type="submit" value="modificarAlumno" id="botonEnviar">
+            <a href="list" class="btn btn-light" id="borrarAlumno">Cancelar</a>
+        </div>
+    </form>
+</body>
+
+</html>
